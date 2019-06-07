@@ -4,6 +4,14 @@ export const performanceList = [
     { id:"continuum", name:"<i>continuum</i>"}
 ];
 
+/*
+export const activePerformance = {
+    id:"continuum", 
+    name:"<i>continuum</i>"
+};
+*/
+export const activePerformance = undefined;
+
 export const performanceData = {
     animalNature: {
         name: "Animal Nature",

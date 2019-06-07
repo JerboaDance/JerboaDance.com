@@ -1,6 +1,6 @@
 <script>
   import { slide } from 'svelte/transition';
-  import { performanceList } from './performances.js';
+  import { performanceList, activePerformance } from './performances.js';
 
   let showPerformancesSubmenu = false;
   function handleMouseenterPerformanceSubmenu() { showPerformancesSubmenu = true; }
@@ -76,6 +76,13 @@
             <li><a href="{performance.id}.html">{@html performance.name}</a></li>
           {/each}
         </ul>
+      {/if}
+    </li>
+    <li>
+      {#if activePerformance}
+        <a href="{activePerformance.id}.html">{@html activePerformance.name}</a>
+      {:else}
+        <a href="donations.html">Donations</a>
       {/if}
     </li>
   </ul>
