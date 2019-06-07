@@ -60,16 +60,17 @@
   }
 </style>
 
+<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 <nav>
   <ul class="menu">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
+    <li><a href="index.html">HOME</a></li>
+    <li><a href="about.html">ABOUT</a></li>
     <li
       class="submenu" 
       on:mouseenter={handleMouseenterPerformanceSubmenu}
       on:mouseleave={handleMouseleavePerformanceSubmenu}
       >
-      <a href="performances.html">Performances</a>
+      <a href="performances.html">PERFORMANCES</a>
       {#if showPerformancesSubmenu}
         <ul transition:slide>
           {#each performanceList as performance}
@@ -82,7 +83,7 @@
       {#if activePerformance}
         <a href="{activePerformance.id}.html">{@html activePerformance.name}</a>
       {:else}
-        <a href="donations.html">Donations</a>
+        <a href="donations.html">DONATIONS</a>
       {/if}
     </li>
   </ul>
