@@ -1,5 +1,12 @@
 <script>
-	let name = 'world';
+	import Navigation from './components/Navigation.svelte'
 </script>
 
-<h1>Hello {name}!</h1>
+<style>
+  * {
+    padding: 0;
+	margin: 0;
+  }
+</style>
+
+<Navigation />
