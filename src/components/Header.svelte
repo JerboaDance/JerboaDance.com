@@ -33,7 +33,6 @@
   }
 </style>
 
-<link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald&display=swap" rel="stylesheet">
 <header>
   <div class="title">
     <a href="index.html">

@@ -5,6 +5,6 @@
 <style>
 </style>
 
-<Page title="foobar">
+<Page title="Performances">
   Page content
 </Page>

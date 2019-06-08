@@ -1,6 +1,6 @@
 <script>
   import { slide } from 'svelte/transition';
-  import { performanceList, activePerformance } from './performances.js';
+  import { performanceList, activePerformance } from '../data/performances.js';
 
   let showPerformancesSubmenu = false;
   function handleMouseenterPerformanceSubmenu() { showPerformancesSubmenu = true; }
@@ -60,7 +60,6 @@
   }
 </style>
 
-<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 <nav>
   <ul class="menu">
     <li><a href="index.html">HOME</a></li>

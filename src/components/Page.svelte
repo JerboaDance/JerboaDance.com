@@ -1,6 +1,7 @@
 <script>
   import Header from './Header.svelte'
   import Footer from './Footer.svelte'
+  export let title;
 </script>
 
 <style>
@@ -38,12 +39,15 @@
 
 </style>
 
-<Header class="header"/>
+<svelte:head>
+  <title>Jerboa Dance{title ? ` - ${title}` : ''}</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald&display=swap" rel="stylesheet">
+</svelte:head>
 
+<Header class="header"/>
 <main class="wrapper">
   <div class="content">
    <slot />
   </div>
 </main>
-
 <Footer class="footer"/>
