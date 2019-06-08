@@ -1,14 +1,10 @@
 <script>
-  import Header from './components/Header.svelte'
-  import Footer from './components/Footer.svelte'
+  import Page from './components/Page.svelte'
 </script>
 
 <style>
-  * {
-    padding: 0;
-   	margin: 0;
-  }
 </style>
 
-<Header/>
-<Footer/>
+<Page>
+  Page content
+</Page>

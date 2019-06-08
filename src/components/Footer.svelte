@@ -8,11 +8,12 @@
 }
 
 footer {
+  background-color: #DDD;
   display: grid;
   grid-template-columns: 175px auto 175px;
   justify-items: center;
   align-items: center;
-  padding: 1em;
+  padding: 1em 2em;
 }
 
 .contact {
