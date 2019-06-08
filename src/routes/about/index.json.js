@@ -1,6 +1,7 @@
 import companyMembers from './_companyMembers.js';
+const activeCompanyMembers = companyMembers.filter(companyMember => companyMember.active);
 
-const contents = JSON.stringify(companyMembers.map(companyMember => {
+const contents = JSON.stringify(activeCompanyMembers.map(companyMember => {
 	return companyMember;
 }));
 

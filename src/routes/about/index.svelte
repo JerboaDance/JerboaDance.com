@@ -8,7 +8,7 @@
 
 <script>
   import Photograph from '../../components/Photograph.svelte';
-	export let companyMembers;
+  export let companyMembers;
 </script>
 
 <style>
