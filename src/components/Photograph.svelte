@@ -3,8 +3,8 @@ import { fade } from 'svelte/transition';
 import Hoverable from './Hoverable.svelte';
 export let src;
 export let alt;
-export let photographer;
-export let copyright;
+export let photographer = null;
+export let copyright = null;
 </script>
 
 <style>
