@@ -1,7 +1,6 @@
 <script context="module">
 	export function preload({ params, query }) {
 		return this.fetch(`about.json`).then(r => r.json()).then(companyMembers => {
-      console.log(companyMembers);
 			return { companyMembers };
 		});
 	}
@@ -13,6 +12,12 @@
 </script>
 
 <style>
+.gallery {
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 2rem;
+}
+
 </style>
 
 <svelte:head>
@@ -34,7 +39,7 @@
   </p>
 </section>
 
-<section>
+<section class="gallery">
   {#each companyMembers as companyMember}
     <article>
       <h2>{companyMember.name}</h2>

@@ -13,13 +13,26 @@ export let copyright;
    	margin: 0;
   }
 
+  .imageWrapper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .imageWrapper img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  } 
+
   details > summary::-webkit-details-marker {
     display:none;
   }
 </style>
 
 <Hoverable let:hovering={hovering}>
-  <img {src} {alt} />
+  <div class="imageWrapper">
+    <img {src} {alt} />
+  </div>
   {#if photographer && hovering}
     <details transition:fade>
       <summary>Photo Credit: {photographer}</summary>

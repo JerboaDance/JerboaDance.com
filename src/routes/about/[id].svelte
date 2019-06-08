@@ -27,5 +27,9 @@
 	{...companyMember.photoCredit}
 	/>
 <article class="bio">
-  {@html companyMember.bio}
+  {#if companyMember.bio} 
+    {@html companyMember.bio}
+  {:else}
+    No biography provided
+  {/if}
 </article>
