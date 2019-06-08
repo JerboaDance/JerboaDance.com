@@ -1,11 +1,7 @@
 <script>
+  import Hoverable from './Hoverable.svelte';
   import { slide } from 'svelte/transition';
-  import { performanceList, activePerformance } from '../routes/performances/_performances.js';
-
-  let showPerformancesSubmenu = false;
-  function handleMouseenterPerformanceSubmenu() { showPerformancesSubmenu = true; }
-  function handleMouseleavePerformanceSubmenu() { showPerformancesSubmenu = false; }
-
+  import { performanceData, activePerformance } from '../routes/performances/_performances.js';
 </script>
 
 <style>
@@ -46,7 +42,7 @@
   }
 
   /* Vertical submenu */
-  .submenu > ul{
+  .submenu ul{
     text-align: left;
     position: absolute;
     z-index: 10;
@@ -64,19 +60,17 @@
   <ul class="menu">
     <li><a href=".">HOME</a></li>
     <li><a href="about">ABOUT</a></li>
-    <li
-      class="submenu" 
-      on:mouseenter={handleMouseenterPerformanceSubmenu}
-      on:mouseleave={handleMouseleavePerformanceSubmenu}
-      >
-      <a href="performances">PERFORMANCES</a>
-      {#if showPerformancesSubmenu}
-        <ul transition:slide>
-          {#each performanceList as performance}
-            <li><a href="performances/{performance.id}">{@html performance.name}</a></li>
-          {/each}
-        </ul>
-      {/if}
+    <li class="submenu" >
+      <Hoverable let:hovering={showPerformancesSubmenu}>
+        <a href="performances">PERFORMANCES</a>
+        {#if showPerformancesSubmenu}
+          <ul transition:slide>
+            {#each performanceData as performance}
+              <li><a href="performances/{performance.id}">{@html performance.name}</a></li>
+            {/each}
+          </ul>
+        {/if}
+      </Hoverable>
     </li>
     <li>
       {#if activePerformance}

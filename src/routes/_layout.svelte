@@ -27,7 +27,7 @@
     flex-direction: column;
     padding: 0;
     margin: 0 auto;
-    height: 100%;
+    min-height: 100%;
     max-width: 900px;
     background-color: white;
   }

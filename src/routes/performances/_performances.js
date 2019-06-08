@@ -1,19 +1,6 @@
-export const performanceList = [
-    { id:"animalNature", name:"Animal Nature"},
-    { id:"backFromTheBrink", name:"Back From the Brink"},
-    { id:"continuum", name:"<i>continuum</i>"}
-];
-
-/*
-export const activePerformance = {
-    id:"continuum", 
-    name:"<i>continuum</i>"
-};
-*/
-export const activePerformance = undefined;
-
-export const performanceData = {
-    animalNature: {
+export const performanceData = [
+    {
+        id: "animalNature",
         name: "Animal Nature",
         description: "An evening of revelry and sensuality, journeying from political to mystical. Acts feature Jerboa’s signature athletic and emotional style. Special guests include live music, circus arts, burlesque, and more. Friday and Saturday evening shows followed by live DJs.",
         runs: [
@@ -41,7 +28,8 @@ export const performanceData = {
             }
         ]
     },
-    backFromTheBrink: {
+    {
+        id: "backFromTheBrink",
         name: "Back From the Brink",
         description: "This acrobatic, energetic modern dance ballet takes audiences on a gripping journey into the human psyche. Conceived around the classic stages of grief, Act I begins after a traumatic event leads the dancers to reflect on their lives. Act II moves into the discovery of how to push forward, build new relationships, find community, and hope.",
         runs: [
@@ -70,7 +58,8 @@ export const performanceData = {
             }
         ]
     },
-    continuum: {
+    {
+        id: "continuum",
         name: "<i>continuum</i>",
         description: "<i>continuum</i> is an exploration the complexities of human relationships and the patterns we fall into, both good and bad. As is Jerboa Dance’s style, it is an acrobatic, energetic work relying on raw emotion and the strong technical background of the dancers to draw in the audience. Rather than a story with a clear beginning and end, continuum is a window into the moments of our lives.",
         runs:[
@@ -100,4 +89,6 @@ export const performanceData = {
             }
         ]
     }
-};
+];
+
+export const activePerformance = undefined;
