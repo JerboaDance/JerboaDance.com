@@ -51,13 +51,14 @@ footer {
     <a class="badName" href="mailto:info@jerboadance.com">info@jerboadance.com</a>
     <a class="badName" href="tel:+12135372627">213-537-2627</a>
     <a class="socialMediaIcon" href="https://www.facebook.com/JerboaDance/" target="_blank">
-      <img src="/assets/footer/facebook.png" alt="Visit Jerboa Dance on Facebook"/>
+      <img src="/footer/facebook.png" alt="Visit Jerboa Dance on Facebook"/>
     </a>
     <a class="socialMediaIcon" href="https://twitter.com/jerboadance" target="_blank">
-      <img src="/assets/footer/twitter.png" alt="Visit Jerboa Dance on Twitter"/>
+      <img src="/footer/twitter.png" alt="Visit Jerboa Dance on Twitter"/>
     </a>
     <a class="socialMediaIcon" href="https://www.instagram.com/jerboadance/" target="_blank">
-      <img src="/assets/footer/instagram.png" alt="Visit Jerboa Dance on Instagram"/>
+      <img src="/footer/instagram.png" alt="Visit Jerboa Dance on Instagram"/>
     </a>
   </div>
+  
 </footer>

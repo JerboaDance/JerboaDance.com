@@ -1,5 +1,4 @@
 <script>
-  import Navigation from './Navigation.svelte'
 </script>
 
 <style>
@@ -35,10 +34,9 @@
 
 <header>
   <div class="title">
-    <a href="index.html">
+    <a href=".">
       <h1>JERBOA DANCE</h1>
       <h2>MODERN. ATHLETIC. POWERFUL.</h2>
     </a>
   </div>
-  <Navigation />
 </header>

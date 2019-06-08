@@ -1,7 +1,8 @@
 <script>
-  import Header from './Header.svelte'
-  import Footer from './Footer.svelte'
-  export let title;
+  import Header from '../components/Header.svelte';
+  import Navigation from '../components/Navigation.svelte';
+  import Footer from '../components/Footer.svelte';
+  export let segment;
 </script>
 
 <style>
@@ -17,12 +18,18 @@
 
   :global(body){
     padding: 0;
+    margin: 0;
+    height: 100%;
+  }
+
+  :global(#sapper) {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
     margin: 0 auto;
     height: 100%;
     max-width: 900px;
     background-color: white;
-    display: flex;
-    flex-direction: column;
   }
 
   .wrapper {
@@ -40,14 +47,15 @@
 </style>
 
 <svelte:head>
-  <title>Jerboa Dance{title ? ` - ${title}` : ''}</title>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald&display=swap" rel="stylesheet">
 </svelte:head>
 
 <Header class="header"/>
+<Navigation />
 <main class="wrapper">
   <div class="content">
-   <slot />
+    <div class="contentHeaderImage" />
+    <slot />
   </div>
 </main>
 <Footer class="footer"/>

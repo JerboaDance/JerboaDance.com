@@ -1,6 +1,6 @@
 <script>
   import { slide } from 'svelte/transition';
-  import { performanceList, activePerformance } from '../data/performances.js';
+  import { performanceList, activePerformance } from '../routes/performances/_performances.js';
 
   let showPerformancesSubmenu = false;
   function handleMouseenterPerformanceSubmenu() { showPerformancesSubmenu = true; }
@@ -62,27 +62,27 @@
 
 <nav>
   <ul class="menu">
-    <li><a href="index.html">HOME</a></li>
-    <li><a href="about.html">ABOUT</a></li>
+    <li><a href=".">HOME</a></li>
+    <li><a href="about">ABOUT</a></li>
     <li
       class="submenu" 
       on:mouseenter={handleMouseenterPerformanceSubmenu}
       on:mouseleave={handleMouseleavePerformanceSubmenu}
       >
-      <a href="performances.html">PERFORMANCES</a>
+      <a href="performances">PERFORMANCES</a>
       {#if showPerformancesSubmenu}
         <ul transition:slide>
           {#each performanceList as performance}
-            <li><a href="{performance.id}.html">{@html performance.name}</a></li>
+            <li><a href="performances/{performance.id}">{@html performance.name}</a></li>
           {/each}
         </ul>
       {/if}
     </li>
     <li>
       {#if activePerformance}
-        <a href="{activePerformance.id}.html">{@html activePerformance.name}</a>
+        <a href="performances/{activePerformance.id}">{@html activePerformance.name}</a>
       {:else}
-        <a href="donations.html">DONATIONS</a>
+        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=7G65H8ZWEKR74" target="_blank" rel="nofollow">DONATE</a>
       {/if}
     </li>
   </ul>
