@@ -1,14 +1,20 @@
 <script context="module">
 	export function preload({ params, query }) {
-		return this.fetch(`about.json`).then(r => r.json()).then(companyMembers => {
-			return { companyMembers };
-		});
+    const former = (query.former !== undefined) ? "?former" : "";
+    return this.fetch(`about.json${former}`).then(r => r.json()).then(data => {
+      data.former = former;
+      return data;
+    });
 	}
 </script>
 
 <script>
   import Photograph from '../../components/Photograph.svelte';
   export let companyMembers;
+  export let jaimeWaliczek;
+  export let former;
+
+  $: subtitle = !former ? "The Company" : "Former Company Members";
 </script>
 
 <style>
@@ -21,23 +27,37 @@
 </style>
 
 <svelte:head>
-  <title>Jerboa Dance - About</title>
+  <title>Jerboa Dance - {subtitle}</title>
 </svelte:head>
 
-<section>
-  <h1>The Company</h1>
-  <p>
-  Jerboa Dance is a Seattle-based 501(c)(3) non-profit performance dance company formed in 2003 by Christina Johnson, Anna Percival, and Jaime Waliczek. The company premiered its first works in June of that year and has since gone on to produce 5 successful full-length shows, two cabarets, and numerous guest performances.
-  </p>
+<h1>{subtitle}</h1>
 
-  <p>
-  Christina’s and Jaime’s unique backgrounds and styles of dance provided Seattle audiences with an eclectic mix of choreography and dancing until Christina’s departure for New York in 2005. Jaime joined Christina in New York for the 2007 season before returning to Seattle to choreograph for several more years. Jerboa Dance had been on hiatus from 2012-2015, and is excited to be preparing the 2017 season after a successful return in 2016.
-  </p>
+{#if !former}
+  <section>
+    <p>
+    Jerboa Dance is a Seattle-based 501(c)(3) non-profit performance dance company formed in 2003 by Christina Johnson, Anna Percival, and Jaime Waliczek. The company premiered its first works in June of that year and has since gone on to produce 5 successful full-length shows, two cabarets, and numerous guest performances.
+    </p>
 
-  <p>
-  Jerboa Dance strives to offer other local choreographers and dancers opportunities to show their works. Most of all, the company hopes to use their knowledge and passion for dance to educate and entertain the community.
-  </p>
-</section>
+    <p>
+    Christina’s and Jaime’s unique backgrounds and styles of dance provided Seattle audiences with an eclectic mix of choreography and dancing until Christina’s departure for New York in 2005. Jaime joined Christina in New York for the 2007 season before returning to Seattle to choreograph for several more years. Jerboa Dance had been on hiatus from 2012-2015, and is excited to be preparing the 2017 season after a successful return in 2016.
+    </p>
+
+    <p>
+    Jerboa Dance strives to offer other local choreographers and dancers opportunities to show their works. Most of all, the company hopes to use their knowledge and passion for dance to educate and entertain the community.
+    </p>
+  </section>
+  
+  <article>
+    <h2>{jaimeWaliczek.name}</h2>
+    <a rel='prefetch' href="about/{jaimeWaliczek.id}">
+      <Photograph 
+        src="company/{jaimeWaliczek.id}.jpg" 
+        alt="Photograph of {jaimeWaliczek.name}"
+        {...jaimeWaliczek.photoCredit}
+        />
+    </a>
+  </article>
+{/if}
 
 <section class="gallery">
   {#each companyMembers as companyMember}
@@ -53,3 +73,7 @@
     </article>
   {/each}
 </section>
+
+{#if !former}
+<a href="about?former">Former Company Members</a>
+{/if}

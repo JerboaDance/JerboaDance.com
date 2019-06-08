@@ -1,4 +1,4 @@
-import companyMembers from './_companyMembers.js';
+import companyMembers from '../../data/_companyMembers.js';
 
 const lookup = new Map();
 companyMembers.forEach(companyMember => {
