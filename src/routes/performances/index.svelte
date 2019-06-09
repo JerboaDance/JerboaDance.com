@@ -1,12 +1,27 @@
+<script context="module">
+	export function preload({ params, query }) {
+    return this.fetch(`performances.json`).then(r => r.json()).then(data => {
+      return data;
+    });
+	}
+</script>
+
 <script>
+  export let performances;
+  const title = "Performances";
 </script>
 
 <style>
 </style>
 
 <svelte:head>
-  <title>Jerboa Dance - Performances</title>
+  <title>Jerboa Dance - {title}</title>
 </svelte:head>
 
-<h1>See shows</h1>
-<p>They happen</p>
+<h1>{title}</h1>
+  {#each performances as performance}
+    <article>
+      {@html performance.name}
+    </article>
+  {/each}
+

@@ -1,7 +1,7 @@
 <script>
   import Hoverable from './Hoverable.svelte';
   import { slide } from 'svelte/transition';
-  import { performanceData, activePerformance } from '../routes/performances/_performances.js';
+  import { performanceData, activePerformance } from '../data/_performances.js';
 </script>
 
 <style>
