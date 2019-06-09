@@ -8,6 +8,7 @@
 
 <script>
   import Photograph from '../../components/Photograph.svelte';
+  import Bio from '../../components/Bio.svelte';
   export let companyMembers;
   export let jaimeWaliczek;
   const title = "The Company";
@@ -21,7 +22,7 @@
 }
 
 .jaimeWaliczek {
-  grid-column: 1 / span 3;
+  width: 50%;
 }
 </style>
 
@@ -45,18 +46,11 @@
   </p>
 </section>
 
-<section class="gallery">
-  <article class="jaimeWaliczek">
-    <h2>{jaimeWaliczek.name}</h2>
-    <a rel='prefetch' href="about/{jaimeWaliczek.id}">
-      <Photograph 
-        src="company/{jaimeWaliczek.id}.jpg" 
-        alt="Photograph of {jaimeWaliczek.name}"
-        {...jaimeWaliczek.photoCredit}
-        />
-    </a>
-  </article>
+<section class="jaimeWaliczek">
+  <Bio person={jaimeWaliczek} />
+</section>
 
+<section class="gallery">
   {#each companyMembers as companyMember}
     <article>
       <h2>{companyMember.name}</h2>
