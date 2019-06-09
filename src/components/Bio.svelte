@@ -2,9 +2,8 @@
   import Photograph from './Photograph.svelte';
   
   export let person;
-  export let detailsHidden = true;
+  let detailsHidden = true;
 
-  $:src = `company/${person.id}.jpg`;
   $:alt = `Photograph of ${person.name}`;
   
   function handleClick(event) {
@@ -92,13 +91,13 @@
 
 <div class="inlineContent" on:click={handleClick}>
     <h3>{person.name}</h3>
-    <Photograph {src} {alt} {...person.photoCredit} />
+    <Photograph {alt} photograph={person.headshot} />
 </div>
 
 {#if !detailsHidden}
 <div class="modalBackground" on:click={handleClick}>
     <div class="modalContent">
-        <img class="modalPhotograph" {src} {alt}/>
+        <img class="modalPhotograph" src={person.headshot.uri} {alt}/>
         <h2 class="modalTitle">{person.name}</h2>
         <div class="modalBio">{@html person.bio}</div>
     </div>

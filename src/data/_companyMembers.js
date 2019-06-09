@@ -51,7 +51,6 @@ const companyMembers = [
   {
     id:"ChelseaReinschmidt",
     name: "Chelsea Reinschmidt",
-    photoCredit: { photographer:"Warren Woo" },
     bio: `
       <p>Chelsea took their first ballet class at the age of 3 but didn’t like the pink shoes or the standing still thing. However, their love of movement started young and they spent the bulk of their youth competing in the Texas junior olympic women’s  gymnastics program. In their 20s, they discovered AcroYoga and partner acrobatics and briefly toured with a local circus troupe in Chicago. In 2012, they began modern dance as well as tap, jazz, ballet and hip hop at eXit Space school of dance where they currently dance. They are excited to perform with Jerboa where they get a chance to combine their love of both dance and acrobatics.</p>
     `
@@ -126,7 +125,6 @@ const companyMembers = [
   {
     id:"JaimeWaliczek",
     name:"Jaime Waliczek",
-    photoCredit: { photographer:"Warren Woo" },
     bio: `
       <p>Jaime Waliczek took dance classes growing up in Chicago at Gus Giordano and Studio Two while doing high level competitive gymnastics.  She continued her training at the University of Illinois, Urbana-Champaign. After moving to Seattle, Jaime performed with the Eastside Moving Company from 2000-2002, working with people like Deborah Wolf and Wade Madsen, and whet her choreography appetite by created her first modern work. After that, Jaime started teaching yoga and performing full time when she danced with Fusion Dance, Better Biscuit, XODO, Unexpected, R Dance, and Seattle Jazz along with DASS Dance and the Seattle Opera, as dance captain. She then worked with some choreographers at the University of Washington while she completed her Master’s degree in nutrition and with Angela Harriell for Nutcracker Rated R and other of her works while living in NYC for the 2007 season. In addition to her work with Jerboa Dance, Jaime’s choreography has been shown in the DUMBO festival, the Cool NY festival, DNA Works in Progress, and guest performances for events and shows including Around the World in 80 Sips and Trip and Fall. Her extensive background in gymnastics and yoga inform her movement and choreography. Jaime loves performing but has an intense itch to create works as well and is excited to be back from her hiatus starting a family to get back on stage.</p>
     `

@@ -1,10 +1,20 @@
 <script>
 import { fade } from 'svelte/transition';
 import Hoverable from './Hoverable.svelte';
-export let src;
 export let alt;
-export let photographer = null;
-export let copyright = null;
+export let photograph;
+
+let photoCredit = null;
+
+$: photographer = photograph.photographer;
+$: copyright = photograph.copyright;
+$: src = photograph.uri;
+$: if (photographer && photographer.name) { photoCredit = `Photo Credit: ${photographer.name}`;}
+
+function stopLinkPropagation(event) {
+  event.stopPropagation();
+  return false;
+}
 </script>
 
 <style>
@@ -22,23 +32,28 @@ export let copyright = null;
     object-fit: cover;
     width: 100%;
     height: 100%;
-  } 
-
-  details > summary::-webkit-details-marker {
-    display:none;
   }
 </style>
 
 <Hoverable let:hovering={hovering}>
-  <div class="imageWrapper">
+  <figure class="imageWrapper">
     <img {src} {alt} />
-  </div>
-  {#if photographer && hovering}
-    <details transition:fade>
-      <summary>Photo Credit: {photographer}</summary>
-      {#if copyright}
-        <p>{copyright}</p>
-      {/if} 
-    </details>
-  {/if}
+    {#if photoCredit && hovering}
+      <figcaption transition:fade>
+
+        {#if photographer.website}
+          <a href={photographer.website} target="_blank" on:click={stopLinkPropagation}>
+            {photoCredit}
+          </a>
+        {:else}
+          <span>{photoCredit}</span>
+        {/if}
+
+        {#if copyright}
+          <span>. {copyright}.</span>
+        {/if} 
+
+      </figcaption>
+    {/if}
+  </figure>
 </Hoverable>

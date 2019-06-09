@@ -21,7 +21,7 @@
 <h1>{title}</h1>
   {#each performances as performance}
     <article>
-      <a rel="prefetch" href='performances/{performance.id}'>{performance.name}</a>
+      <a rel="prefetch" href='performances/{performance.id}'>{@html performance.name}</a>
     </article>
   {/each}
 
