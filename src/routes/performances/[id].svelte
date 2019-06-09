@@ -12,6 +12,7 @@
 </script>
 
 <script>
+    import Photograph from '../../components/Photograph.svelte';
 	export let performance;
 </script>
 
@@ -21,6 +22,8 @@
 <svelte:head>
 	<title>Jerboa Dance - {performance.name}</title>
 </svelte:head>
+
+<Photograph photograph={performance.headerPhotograph} alt="Header image for {performance.name} details page" />
 
 <h1>{@html performance.name}</h1>
 

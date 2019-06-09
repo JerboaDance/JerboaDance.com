@@ -51,10 +51,10 @@
 </svelte:head>
 
 <Header class="header"/>
-<Navigation />
+<Navigation {segment} />
 <main class="wrapper">
+  <div class="contentHeaderImage" />
   <div class="content">
-    <div class="contentHeaderImage" />
     <slot />
   </div>
 </main>

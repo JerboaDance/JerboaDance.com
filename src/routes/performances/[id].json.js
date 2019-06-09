@@ -2,7 +2,11 @@ import {performanceData} from '../../data/_performances.js';
 
 const lookup = new Map();
 performanceData.forEach(performance => {
-	lookup.set(performance.id, JSON.stringify(performance));
+	const headerPhotograph = {
+		uri: performance.headerUri ? performance.headerUri : `performances/${performance.id}/header.jpg`
+	};
+
+	lookup.set(performance.id, JSON.stringify({headerPhotograph, ...performance}));
 });
 
 export function get(req, res, next) {

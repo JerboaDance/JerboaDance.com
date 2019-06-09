@@ -6,6 +6,10 @@ const photos = [
     {
         uri:"company/ChelseaReinschmidt.jpg",
         photographerId:"WarrenWoo" 
+    },
+    {
+        uri:"performances/AnimalNature.jpg",
+        photographerId:"LaurenWhite"
     }
 ];
 
@@ -13,6 +17,9 @@ const photographers = {
     WarrenWoo: {
         name: "Warren Woo",
         website: "https://www.warren-woo.com/"
+    },
+    LaurenWhite: {
+        name: "Lauren White"
     }
 }
 
