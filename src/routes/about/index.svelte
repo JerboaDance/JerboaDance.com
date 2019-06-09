@@ -7,7 +7,6 @@
 </script>
 
 <script>
-  import Photograph from '../../components/Photograph.svelte';
   import Bio from '../../components/Bio.svelte';
   export let companyMembers;
   export let jaimeWaliczek;
@@ -53,14 +52,7 @@
 <section class="gallery">
   {#each companyMembers as companyMember}
     <article>
-      <h2>{companyMember.name}</h2>
-      <a rel='prefetch' href="about/{companyMember.id}">
-        <Photograph 
-          src="company/{companyMember.id}.jpg" 
-          alt="Photograph of {companyMember.name}"
-          {...companyMember.photoCredit}
-          />
-      </a>
+      <Bio person={companyMember} />
     </article>
   {/each}
 </section>
