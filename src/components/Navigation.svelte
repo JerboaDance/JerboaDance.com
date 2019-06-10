@@ -31,6 +31,6 @@
     <MenuItem uri="works" text="Works" />
   {/if}
 
-  <MenuItem uri="donate" text="Support" />
+  <MenuItem uri="support" text="Support" />
   <!-- Contact page? -->
 </Menu>
