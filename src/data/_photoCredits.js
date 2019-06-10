@@ -33,6 +33,4 @@ export function findByUri(uri) {
     return photoCredit;
 }
 
-// TODO add a function to get more than one photocredit at a time?
-
 export default {findByUri};

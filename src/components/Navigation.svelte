@@ -11,7 +11,7 @@
 <Menu>
   <MenuItem uri="." text="Home" />
   <Submenu uri="about" text="About">
-    <MenuItem uri="about/company" text="Company" />
+    <MenuItem uri="about" text="Company" />
     <MenuItem uri="about/dancers" text="Dancers"/>
     <MenuItem uri="about/director" text="Artistic Director" />
     <!-- Auditions? -->

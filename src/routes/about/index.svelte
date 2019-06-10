@@ -1,30 +1,8 @@
-<script context="module">
-	export function preload({ params, query }) {
-    return this.fetch(`about.json`).then(r => r.json()).then(data => {
-      return data;
-    });
-	}
-</script>
-
 <script>
-  import Bio from '../../components/Bio.svelte';
-  export let companyMembers;
-  export let jaimeWaliczek;
   const title = "The Company";
 </script>
 
 <style>
-.gallery {
-  display:grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: 2rem;
-}
-
-.jaimeWaliczek {
-  grid-column: 1 / span 3;
-  justify-self: center;
-  width: 50%;
-}
 </style>
 
 <svelte:head>
@@ -40,20 +18,10 @@
         <p>Jerboa Dance strives to offer other local choreographers and dancers opportunities to show their works. Most of all, the company hopes to use their knowledge and passion for dance to educate and entertain the community.</p>
     </section>
 
-    <section class="gallery">
-
-      <article class="jaimeWaliczek">
-          <Bio person={jaimeWaliczek} />
-      </article>
-    
-      {#each companyMembers as companyMember}
-          <article>
-              <Bio person={companyMember} />
-          </article>
-      {/each}
-    
-    </section>
-
+    <a href="about/director">Artistic Director</a>
+    <br/>
+    <a href="about/dancers">Current Company Members</a>
+    <br/>
     <a href="about/former">Former Company Members</a>
 
 </main>
