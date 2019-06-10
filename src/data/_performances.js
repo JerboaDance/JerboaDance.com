@@ -91,4 +91,4 @@ export const performanceData = [
     }
 ];
 
-export const activePerformance = undefined;
+export const activePerformance = {id:"animalNature", name:"Animal Nature"};

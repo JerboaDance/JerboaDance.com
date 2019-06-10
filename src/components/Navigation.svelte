@@ -1,83 +1,36 @@
 <script>
-  import Hoverable from './Hoverable.svelte';
   import { slide } from 'svelte/transition';
-  import { performanceData, activePerformance } from '../data/_performances.js';
+  import { activePerformance } from '../data/_performances.js';
+
+
+  import Menu from './Menu.svelte';
+  import Submenu from './SubMenu.svelte';
+  import MenuItem from './MenuItem.svelte';
 </script>
 
-<style>
-  * {
-    padding: 0;
-    margin: 0;
-    background-color: #a553ba;
-  }
+<Menu>
+  <MenuItem uri="." text="Home" />
+  <Submenu uri="about" text="About">
+    <MenuItem uri="about/company" text="Company" />
+    <MenuItem uri="about/dancers" text="Dancers"/>
+    <MenuItem uri="about/director" text="Artistic Director" />
+    <!-- Auditions? -->
+    <!-- Contact page? -->
+  </Submenu>
 
-  nav {
-    text-align: center;
-    width: 100%;
-  }
+  {#if activePerformance}
+    <Submenu uri="works" text="Works">
+      <MenuItem uri="works/{activePerformance.id}" text="Upcoming show" />
+      <!-- 2018/2019 Season? -->
+      <MenuItem uri="works" text="All shows" />
+      <!-- Festivals? -->
+    </Submenu>
 
-  li {
-    list-style: none;
-  }
+    <MenuItem uri="works/{activePerformance.id}" text="Tickets" />
+  {:else}
+    <MenuItem uri="works" text="Works" />
+  {/if}
 
-  a {
-    color: #DDD;
-    text-decoration: none;
-  }
-
-  li:hover > a {
-    color: black;
-  }
-
-  /* Horizontal main menu */
-  .menu {
-    padding: 1em;
-  }
-
-  .menu > li {
-    display: inline-block;
-    padding: 0 0.7em;
-    position: relative;
-    white-space: nowrap;
-  }
-
-  /* Vertical submenu */
-  .submenu ul{
-    text-align: left;
-    position: absolute;
-    z-index: 10;
-    padding: 1em 1em;
-    margin: 0em -1em;
-  }
-
-  .submenu li {
-    display: block;
-    padding: .3em 0em;
-  }
-</style>
-
-<nav>
-  <ul class="menu">
-    <li><a href=".">HOME</a></li>
-    <li><a href="about">ABOUT</a></li>
-    <li class="submenu" >
-      <Hoverable let:hovering={showPerformancesSubmenu}>
-        <a href="performances">PERFORMANCES</a>
-        {#if showPerformancesSubmenu}
-          <ul transition:slide>
-            {#each performanceData as performance}
-              <li><a href="performances/{performance.id}">{@html performance.name}</a></li>
-            {/each}
-          </ul>
-        {/if}
-      </Hoverable>
-    </li>
-    <li>
-      {#if activePerformance}
-        <a href="performances/{activePerformance.id}">{@html activePerformance.name}</a>
-      {:else}
-        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=7G65H8ZWEKR74" target="_blank" rel="nofollow">DONATE</a>
-      {/if}
-    </li>
-  </ul>
-</nav>
+  <MenuItem uri="donate" text="Support" />
+  <!-- Contact page? -->
+</Menu>
