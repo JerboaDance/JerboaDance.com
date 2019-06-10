@@ -1,10 +1,10 @@
 <script context="module">
 	export async function preload({ params, query }) {
-		const res = await this.fetch(`performances/${params.id}.json`);
+		const res = await this.fetch(`works/${params.id}.json`);
 		const data = await res.json();
 
 		if (res.status === 200) {
-			return { performance: data };
+			return { work: data };
 		} else {
 			this.error(res.status, data.message);
 		}
@@ -13,22 +13,22 @@
 
 <script>
     import Photograph from '../../components/Photograph.svelte';
-	export let performance;
+	export let work;
 </script>
 
 <style>
 </style>
 
 <svelte:head>
-	<title>Jerboa Dance - {performance.name}</title>
+	<title>Jerboa Dance - {work.name}</title>
 </svelte:head>
 
-<Photograph photograph={performance.headerPhotograph} alt="Header image for {performance.name} details page" />
+<Photograph photograph={work.headerPhotograph} alt="Header image for {work.name} details page" />
 
 <main>
-	<h1>{@html performance.name}</h1>
+	<h1>{@html work.name}</h1>
 
 	<div class='content'>
-		{@html performance.description}
+		{@html work.description}
 	</div>
 </main>

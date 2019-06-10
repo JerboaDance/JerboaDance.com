@@ -1,4 +1,4 @@
-export const performanceData = [
+export const works = [
     {
         id: "animalNature",
         name: "Animal Nature",
@@ -91,4 +91,4 @@ export const performanceData = [
     }
 ];
 
-export const activePerformance = {id:"animalNature", name:"Animal Nature"};
+export const activeWork = {id:"animalNature", name:"Animal Nature"};

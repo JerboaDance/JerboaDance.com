@@ -1,6 +1,6 @@
 <script>
   import { slide } from 'svelte/transition';
-  import { activePerformance } from '../data/_performances.js';
+  import { activeWork } from '../data/_works.js';
 
 
   import Menu from './Menu.svelte';
@@ -18,15 +18,15 @@
     <!-- Contact page? -->
   </Submenu>
 
-  {#if activePerformance}
+  {#if activeWork}
     <Submenu uri="works" text="Works">
-      <MenuItem uri="works/{activePerformance.id}" text="Upcoming show" />
+      <MenuItem uri="works/{activeWork.id}" text="Upcoming show" />
       <!-- 2018/2019 Season? -->
       <MenuItem uri="works" text="All shows" />
       <!-- Festivals? -->
     </Submenu>
 
-    <MenuItem uri="works/{activePerformance.id}" text="Tickets" />
+    <MenuItem uri="works/{activeWork.id}" text="Tickets" />
   {:else}
     <MenuItem uri="works" text="Works" />
   {/if}

@@ -1,12 +1,12 @@
-import {performanceData} from '../../data/_performances.js';
+import {works} from '../../data/_works.js';
 
 const lookup = new Map();
-performanceData.forEach(performance => {
+works.forEach(work => {
 	const headerPhotograph = {
-		uri: performance.headerUri ? performance.headerUri : `performances/${performance.id}/header.jpg`
+		uri: work.headerUri ? work.headerUri : `works/${work.id}/header.jpg`
 	};
 
-	lookup.set(performance.id, JSON.stringify({headerPhotograph, ...performance}));
+	lookup.set(work.id, JSON.stringify({headerPhotograph, ...work}));
 });
 
 export function get(req, res, next) {
