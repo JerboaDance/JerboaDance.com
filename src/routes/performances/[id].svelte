@@ -25,8 +25,10 @@
 
 <Photograph photograph={performance.headerPhotograph} alt="Header image for {performance.name} details page" />
 
-<h1>{@html performance.name}</h1>
+<main>
+	<h1>{@html performance.name}</h1>
 
-<div class='content'>
-	{@html performance.description}
-</div>
+	<div class='content'>
+		{@html performance.description}
+	</div>
+</main>

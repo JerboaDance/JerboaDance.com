@@ -32,15 +32,15 @@
     background-color: white;
   }
 
-  .wrapper {
+  #wrapper {
     flex: 1 0 auto;
   }
 
-  .content {
+  :global(#wrapper > main) {
     padding: 4em;
   }
 
-  :global(footer) {
+  :global(#sapper > footer) {
     flex-shrink: 0;
   }
 
@@ -50,12 +50,9 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald&display=swap" rel="stylesheet">
 </svelte:head>
 
-<Header class="header"/>
-<Navigation {segment} />
-<main class="wrapper">
-  <div class="contentHeaderImage" />
-  <div class="content">
-    <slot />
-  </div>
-</main>
-<Footer class="footer"/>
+<Header/>
+<Navigation />
+<div id="wrapper">
+  <slot />
+</div>
+<Footer/>

@@ -18,10 +18,15 @@
   <title>Jerboa Dance - {title}</title>
 </svelte:head>
 
-<h1>{title}</h1>
-  {#each performances as performance}
-    <article>
-      <a rel="prefetch" href='performances/{performance.id}'>{@html performance.name}</a>
-    </article>
-  {/each}
+<main>
+
+    <h1>{title}</h1>
+
+    {#each performances as performance}
+        <article>
+            <a rel="prefetch" href='performances/{performance.id}'>{@html performance.name}</a>
+        </article>
+    {/each}
+
+</main>
 

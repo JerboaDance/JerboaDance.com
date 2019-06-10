@@ -31,10 +31,14 @@
 	<title>{status}</title>
 </svelte:head>
 
-<h1>{status}</h1>
+<main>
 
-<p>{error.message}</p>
+	<h1>{status}</h1>
 
-{#if dev && error.stack}
-	<pre>{error.stack}</pre>
-{/if}
+	<p>{error.message}</p>
+
+	{#if dev && error.stack}
+		<pre>{error.stack}</pre>
+	{/if}
+
+</main>
