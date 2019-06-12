@@ -9,18 +9,17 @@
 </script>
 
 <Menu>
-  <MenuItem uri="." text="Home" />
   <Submenu uri="about" text="About">
     <MenuItem uri="about" text="Company" />
     <MenuItem uri="about/dancers" text="Dancers"/>
     <MenuItem uri="about/director" text="Artistic Director" />
-    <!-- Auditions? -->
-    <!-- Contact page? -->
+    <MenuItem uri="about/auditions" text="Auditions"/>
+    <MenuItem uri="about/contact" text="Contact" />
   </Submenu>
 
   {#if activeWork}
     <Submenu uri="works" text="Works">
-      <MenuItem uri="works/{activeWork.id}" text="Upcoming show" />
+      <MenuItem uri="works/{activeWork.id}" text="Upcoming shows" />
       <!-- 2018/2019 Season? -->
       <MenuItem uri="works" text="All shows" />
       <!-- Festivals? -->
@@ -30,6 +29,12 @@
   {:else}
     <MenuItem uri="works" text="Works" />
   {/if}
+
+  <Submenu uri="book" text="Book">
+    <MenuItem uri="book/event" text="Private events" />
+    <MenuItem uri="book/choreography" text="Custom choreography" />
+    <MenuItem uri="book/lesson" text="Private lesson"/>
+  </Submenu>
 
   <MenuItem uri="support" text="Support" />
   <!-- Contact page? -->
