@@ -1,6 +1,5 @@
 <script>
   import Header from '../components/Header.svelte';
-  import Navigation from '../components/Navigation.svelte';
   import Footer from '../components/Footer.svelte';
   export let segment;
 </script>
@@ -20,6 +19,7 @@
     padding: 0;
     margin: 0;
     height: 100%;
+    color: #BBB;
   }
 
   :global(#sapper) {
@@ -28,19 +28,17 @@
     padding: 0;
     margin: 0 auto;
     min-height: 100%;
-    max-width: 900px;
-    background-color: white;
   }
 
   #wrapper {
     flex: 1 0 auto;
   }
 
-  :global(#wrapper > main) {
-    padding: 4em;
+  #wrapper > :global(main) {
+    padding: 2em 4em;
   }
 
-  :global(#sapper > footer) {
+  :global(#sapper) > footer {
     flex-shrink: 0;
   }
 
@@ -51,7 +49,6 @@
 </svelte:head>
 
 <Header/>
-<Navigation />
 <div id="wrapper">
   <slot />
 </div>

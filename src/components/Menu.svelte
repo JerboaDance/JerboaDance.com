@@ -7,24 +7,18 @@
         padding: 0;
     }
 
-    nav {
-        text-align: center;
-        width: 100%;
-        background-color: #a553ba;
-    }
-
     /* Styles for all menu items */
-    :global(.menu li) {
+    .menu :global(li) {
         list-style: none;
     }
 
-    :global(.menu a) {
+    .menu :global(a) {
         text-transform: uppercase; 
         color: #DDD;
         text-decoration: none;
     }
 
-    :global(.menu li:hover > a) {
+    .menu :global(li:hover > a) {
         color: black;
     }
     
@@ -33,7 +27,7 @@
         padding: 1em;
     }
 
-    :global(.menu > li) {
+    .menu :global(li) {
         display: inline-block;
         padding: 0 0.7em;
         position: relative;
@@ -41,16 +35,16 @@
     }
 
     /* Submenu layout */
-    :global(.menu .submenu) {
+    .menu :global(.submenu) {
         text-align: left;
         position: absolute;
         z-index: 10;
         padding: 1em 1em;
         margin: 0em -1em;
-        background-color: #a553ba;
+        background-color: #7e1f2f;
     }
-
-    :global(.menu .submenu li) {
+    
+    .menu :global(.submenu li) {
         display: block;
         padding: .3em 0em;
     }

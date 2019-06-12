@@ -1,42 +1,59 @@
 <script>
+    import Navigation from '../components/Navigation.svelte';
 </script>
 
 <style>
-  * {
-    padding: 0;
-   	margin: 0;
-  }
+    * {
+        padding: 0;
+        margin: 0;
+    }
 
-  header {
-   text-align: center;
-  }
+    .headerCommon {
+        text-align: center;
+        width: 100%;
+        padding-top: 1em;
 
-  .title {
-    padding: 1em 0em;
-  }
+    }
 
-  .title a {
-    text-decoration: none;
-    color: #333;
-  }
+    .headerMask {
+        visibility: hidden;
+    }
 
-  .title h1 {
-    font-size: 3em;
-    font-family: "Oswald";
-    font-weight: bold;
-  }
+    .header {
+        position: fixed;
+        z-index: 50;
+        /* TODO figure out how tom make the transition only apply to this property
+          because right now it looks weird when the page resizes */
+        background-image: linear-gradient(to bottom right, #7e1f2f, #00000000);
+        transition: 1.5s;
+    }
 
-  .title h2 {
-    font-family: "Open Sans";
-    font-size: 1em;
-  }
+    .header:hover {
+      background-color: #7e1f2f;
+      transition: .2s;
+    }
+
+    .title {
+        display: inline;
+        font-size: 3em;
+        font-family: "Oswald";
+        font-weight: bold;
+    }
+
+    .title a {
+        text-decoration: none;
+        color: #DDD;
+    }
+    .headerCommon > :global(nav) {
+        display: inline-block;
+    }
 </style>
 
-<header>
-  <div class="title">
-    <a href=".">
-      <h1>JERBOA DANCE</h1>
-      <h2>MODERN. ATHLETIC. POWERFUL.</h2>
-    </a>
-  </div>
+<div class="headerMask headerCommon">
+    <h1 class="title"><a href=".">JERBOA DANCE</a></h1>
+    <Navigation />
+</div>
+<header class="header headerCommon">
+    <h1 class="title"><a href=".">JERBOA DANCE</a></h1>
+    <Navigation />
 </header>
