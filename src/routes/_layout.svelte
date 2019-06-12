@@ -34,7 +34,7 @@
     flex: 1 0 auto;
   }
 
-  #wrapper > :global(main) {
+  :global(main) .narrowSection {
     padding: 2em 4em;
   }
 
