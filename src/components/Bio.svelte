@@ -1,13 +1,14 @@
 <script>
+  import Modal from './Modal.svelte';
   import Photograph from './Photograph.svelte';
   
   export let person;
-  let detailsHidden = true;
-
   $:alt = `Photograph of ${person.name}`;
   
+  let modal;
+  
   function handleClick(event) {
-    detailsHidden = !detailsHidden;
+    modal.show();
   }
 </script>
 
@@ -19,17 +20,6 @@
 
     .inlineContent {
         cursor: pointer;
-    }
-
-    .modalBackground {
-        background-color: rgba(0, 0, 0, 0.4);
-        z-index: 1000;
-        display: block;
-        position: fixed; /* Stay in place */
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
     }
 
     .modalContent {
@@ -94,14 +84,12 @@
     <Photograph {alt} photograph={person.headshot} />
 </div>
 
-{#if !detailsHidden}
-<div class="modalBackground" on:click={handleClick}>
+<Modal bind:this={modal}>
     <div class="modalContent">
         <img class="modalPhotograph" src={person.headshot.uri} {alt}/>
         <h2 class="modalTitle">{person.name}</h2>
         <div class="modalBio">{@html person.bio}</div>
     </div>
-</div>
-{/if}
+</Modal>
 
 
