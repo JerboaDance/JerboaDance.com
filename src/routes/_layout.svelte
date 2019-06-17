@@ -10,16 +10,24 @@
    	margin: 0;
   }
 
+  :root {
+    --accent-color-1: #7e1f2f;
+    --background-color-1: #555555;
+    --text-color-1: #BBBBBB;
+    --link-color-1: #DDDDDD;
+    --link-color-1-hover: #000000;
+  }
+
   :global(html){
     height: 100%;
-    background-color: #555555;
+    background-color: var(--background-color-1);
   }
 
   :global(body){
     padding: 0;
     margin: 0;
     height: 100%;
-    color: #BBB;
+    color: var(--text-color-1);
   }
 
   :global(#sapper) {

@@ -14,12 +14,12 @@
 
     .menu :global(a) {
         text-transform: uppercase; 
-        color: #DDD;
+        color: var(--link-color-1);
         text-decoration: none;
     }
 
     .menu :global(li:hover > a) {
-        color: black;
+        color: var(--link-color-1-hover);
     }
     
     /* Main menu layout */
@@ -41,7 +41,7 @@
         z-index: 10;
         padding: 1em 1em;
         margin: 0em -1em;
-        background-color: #7e1f2f;
+        background-color: var(--accent-color-1);
     }
     
     .menu :global(.submenu li) {
